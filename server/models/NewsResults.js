@@ -13,18 +13,7 @@ const NewsResult = new Schema({
 })
 
 
-const ClientInfo = new Schema({
-
-    NewsResultId: [{ type: Schema.Types.ObjectId, ref: 'News' }],
-    KeyWordSearch: [],
-    saveLater: [{ type: Schema.Types.ObjectId, ref: 'News' }] //on click
-})
 
 const News = mongoose.model('News', NewsResult)
-const Client = mongoose.model('Client', ClientInfo)
 
-
-module.exports = {
-    News,
-    Client
-}
+module.exports = News
