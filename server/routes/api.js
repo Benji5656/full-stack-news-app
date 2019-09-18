@@ -37,7 +37,7 @@ router.get('/news/:qry', function (req, res) {
 
     res.send(topNews)
     // res.send(ncity)
-})
+})  
 
 
 
