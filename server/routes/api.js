@@ -7,6 +7,7 @@ const apiKey = '84fbe4414e2c445bbc8fa1036b9ba511'
 let topNews 
 let indxArticl
 let newsArticle
+let articleArray = []
 
 // let summary = function (articArray) {
 //     if (articArray.length >= 2) {
@@ -23,19 +24,22 @@ router.get('/news/:query', function (req, res) {
     request(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`, function (error, res, body) {
         topNews = JSON.parse(body)
         // summary(topNews.articles)
-        // console.log(topNews)
+        // console.log(topNews.articles)
         // console.log(indx)
-
-        newsArticle = new News({
-            source: topNews.articles[0].source.name,  //location.name
-            author: topNews.articles[0].author,                        // 
-            title: topNews.articles[0].title,
-            description: topNews.articles[0].description,
-            url: topNews.articles[0].url,
-            urlImage: topNews.articles[0].urlToImage,
-            publishedAt: topNews.articles[0].publishedAt
-        })
-        console.log(newsArticle)
+        
+        newsArticle = topNews.articles.forEach(a => {
+            newsArticles = new News({
+                source: a.source.name,  //location.name
+                author: a.author,                        // 
+                title: a.title,
+                description: a.description,
+                url: a.url,
+                urlImage: a.urlToImage,
+                publishedAt: a.publishedAt
+            })
+            articleArray.push(newsArticles)
+        }); 
+        console.log(articleArray)
     })
     res.send(newsArticle)
 
