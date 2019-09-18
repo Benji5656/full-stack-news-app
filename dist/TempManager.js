@@ -4,6 +4,7 @@ class TempManager {
     }
 
     async getResultsFromAPI () {
+
         let results = await $.get('/news')
         this.trendingNews = results
     }
