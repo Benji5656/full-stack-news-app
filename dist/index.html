@@ -16,6 +16,8 @@
         <button class="searchButton">Search!</button>
     </div>
 
+    <div id="displayPreferences"></div>
+
     <div id="displayNews"></div>
 
     <script id="trendingNews" type="text/x-handlebars-template">
@@ -24,9 +26,23 @@
             <h3 class="title">{{title}}</h3>
             <img src={{urlImage}}>
             <p class="description">{{description}}</p>
-            <p class="source">{{source}}</p>
+            <p class="source">{{source}}</p> 
         </div>
     {{/each}}
+    </script>
+
+    <script id="preferences" type="text/x-handlebars-template">
+        {{#each userSearch}}
+            <div class="mySearches">
+                <h3 class="title">{{title}}</h3>
+                <img src={{urlImage}}>
+                <p class="description">{{description}}</p>
+                <p class="source">{{source}}</p>
+            </div>
+        <button class="save"><i class="fas fa-bookmark"></i></button>    
+        <button class="delete"><i class="fas fa-backspace"></i></button>    
+        <button class="refresh"><i class="fas fa-retweet"></i></button>    
+        {{/each}}
     </script>
 
 
