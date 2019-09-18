@@ -5,6 +5,7 @@ const loadPage = async function(){
     await temp.getResultsFromAPI()
     rend.renderNews(temp.trendingNews)   
 }
+loadPage()
 
 const displaySearch = function() {
     let input = $("#searchInput").val()
