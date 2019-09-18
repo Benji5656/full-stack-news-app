@@ -18,23 +18,26 @@ router.get('/news', function (req, res) {
     d.setDate(d.getDate() - 3)
     d = moment().toISOString();
     d = moment().format('YYYY-MM-DD')
-    topNews = JSON.stringify(dummyData)
-    topNews = JSON.parse(topNews)
 
-    newsArticle = topNews.articles.forEach(a => {
-        newsArticles = new News({
-            source: a.source.name,  //location.name
-            author: a.author,                        // 
-            title: a.title,
-            description: a.description,
-            url: a.url,
-            urlImage: a.urlToImage,
-            publishedAt: a.publishedAt
+    request(`https://newsapi.org/v2/top-headlines?country=us&pageSize=6&apiKey=${apiKey}`, function (error, response, body) {
+        searchNews = JSON.parse(body)
+        articleArray = []
+        // console.log(searchNews)
+        newsArticle = searchNews.articles.forEach(a => {
+            newsArticles = new News({
+                source: a.source.name,  //location.name
+                author: a.author,                        // 
+                title: a.title,
+                description: a.description,
+                url: a.url,
+                urlImage: a.urlToImage,
+                publishedAt: a.publishedAt
+            })
+            articleArray.push(newsArticles)
+            console.log(articleArray)
         })
-        articleArray.push(newsArticles)
-        console.log(articleArray)
+        res.send(articleArray)
     })
-    res.send(articleArray)
 })
 
 router.get('/news/:query', function (req, res) {
@@ -73,30 +76,30 @@ router.get('/news/:query', function (req, res) {
         //             publishedAt: a.publishedAt
         //         })
         //         articleArray.push(newsArticles)
-            })
-        res.send(articleArray)
     })
+    res.send(articleArray)
+})
 
 
-    // router.get('/newsTrending', function (req, res) {
-    //     country = 'us'
-    //     topNews = JSON.stringify(dummyData)
-    //     topNews = JSON.parse(topNews)
+// router.get('/newsTrending', function (req, res) {
+//     country = 'us'
+//     topNews = JSON.stringify(dummyData)
+//     topNews = JSON.parse(topNews)
 
 
-    //     newsArticle = topNews.articles.forEach(a => {
-    //         newsArticles = new News({
-    //             source: a.source.name,  //location.name
-    //             author: a.author,                        // 
-    //             title: a.title,
-    //             description: a.description,
-    //             url: a.url,
-    //             urlImage: a.urlToImage,
-    //             publishedAt: a.publishedAt
-    //         })
-    //         console.log(articleArray)
-    //     })
-    //     res.send(articleArray)
-    // })
+//     newsArticle = topNews.articles.forEach(a => {
+//         newsArticles = new News({
+//             source: a.source.name,  //location.name
+//             author: a.author,                        // 
+//             title: a.title,
+//             description: a.description,
+//             url: a.url,
+//             urlImage: a.urlToImage,
+//             publishedAt: a.publishedAt
+//         })
+//         console.log(articleArray)
+//     })
+//     res.send(articleArray)
+// })
 
-    module.exports = router
+module.exports = router
