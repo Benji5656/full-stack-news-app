@@ -5,12 +5,11 @@ const loadPage = async function(){
     await temp.getResultsFromAPI()
     rend.renderNews(temp.trendingNews)   
 }
-loadPage()
 
-let displaySearch =  async function() {
-    let input = $("searchInput").val()
-    let output = await temp.getDataFromResults(input)
-    output = [output]
-    rend.renderNews(output)
+const displaySearch = function() {
+    let input = $("#searchInput").val()
     console.log(input)
+    // let output = await temp.getDataFromResults(input)
+    // output = [output]
+    // rend.renderNews(output)
 }
