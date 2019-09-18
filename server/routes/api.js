@@ -21,7 +21,6 @@ router.get('/news', function (req, res) {
     topNews = JSON.stringify(dummyData)
     topNews = JSON.parse(topNews)
 
-
     newsArticle = topNews.articles.forEach(a => {
         newsArticles = new News({
             source: a.source.name,  //location.name
@@ -42,6 +41,45 @@ router.get('/news/:query', function (req, res) {
     let search = req.params.query
     console.log(search)
 
+    //     topNews = JSON.parse(topNews)
+    request(`https://newsapi.org/v2/everything?q=${search}&pageSize=3&apiKey=${apiKey}`, function (error, response, body) {
+        searchNews = JSON.stringify(body)
+
+        //     newsArticle = topNews.articles.forEach(a => {
+        //         newsArticles = new News({
+        //             source: a.source.name,  //location.name
+        //             author: a.author,                        // 
+        //             title: a.title,
+        //             description: a.description,
+        //             url: a.url,
+        //             urlImage: a.urlToImage,
+        //             publishedAt: a.publishedAt
+        //         })
+        //         console.log(articleArray)
+        //     })
+
+        // request(`https://newsapi.org/v2/everything?q=${search}&pageSize=3&apiKey=${apiKey}`, function (error, response, body) {
+        //     topNews = JSON.parse(body)
+
+
+        //     newsArticle = topNews.articles.forEach(a => {
+        //         newsArticles = new News({
+        //             source: a.source.name,  //location.name
+        //             author: a.author,                        // 
+        //             title: a.title,
+        //             description: a.description,
+        //             url: a.url,
+        //             urlImage: a.urlToImage,
+        //             publishedAt: a.publishedAt
+        //         })
+        //         articleArray.push(newsArticles)
+            })
+        res.send(articleArray)
+    })
+
+
+    // router.get('/newsTrending', function (req, res) {
+    //     country = 'us'
     //     topNews = JSON.stringify(dummyData)
     //     topNews = JSON.parse(topNews)
 
@@ -58,74 +96,7 @@ router.get('/news/:query', function (req, res) {
     //         })
     //         console.log(articleArray)
     //     })
+    //     res.send(articleArray)
+    // })
 
-    // request(`https://newsapi.org/v2/everything?q=${search}&pageSize=3&apiKey=${apiKey}`, function (error, response, body) {
-    //     topNews = JSON.parse(body)
-
-
-    //     newsArticle = topNews.articles.forEach(a => {
-    //         newsArticles = new News({
-    //             source: a.source.name,  //location.name
-    //             author: a.author,                        // 
-    //             title: a.title,
-    //             description: a.description,
-    //             url: a.url,
-    //             urlImage: a.urlToImage,
-    //             publishedAt: a.publishedAt
-    //         })
-    //         articleArray.push(newsArticles)
-    //     })
-    res.send(articleArray)
-})
-
-
-// router.get('/newsTrending', function (req, res) {
-//     country = 'us'
-//     topNews = JSON.stringify(dummyData)
-//     topNews = JSON.parse(topNews)
-
-
-//     newsArticle = topNews.articles.forEach(a => {
-//         newsArticles = new News({
-//             source: a.source.name,  //location.name
-//             author: a.author,                        // 
-//             title: a.title,
-//             description: a.description,
-//             url: a.url,
-//             urlImage: a.urlToImage,
-//             publishedAt: a.publishedAt
-//         })
-//         console.log(articleArray)
-//     })
-//     res.send(articleArray)
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = router
+    module.exports = router
