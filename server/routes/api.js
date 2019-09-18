@@ -21,7 +21,6 @@ router.get('/news', function (req, res) {
     topNews = JSON.stringify(dummyData)
     topNews = JSON.parse(topNews)
 
-
     newsArticle = topNews.articles.forEach(a => {
         newsArticles = new News({
             source: a.source.name,  //location.name
@@ -42,9 +41,9 @@ router.get('/news/:query', function (req, res) {
     let search = req.params.query
     console.log(search)
 
-    //     topNews = JSON.stringify(dummyData)
     //     topNews = JSON.parse(topNews)
-
+    request(`https://newsapi.org/v2/everything?q=${search}&pageSize=3&apiKey=${apiKey}`, function (error, response, body) {
+        searchNews = JSON.stringify(body)
 
     //     newsArticle = topNews.articles.forEach(a => {
     //         newsArticles = new News({
@@ -99,33 +98,5 @@ router.get('/news/:query', function (req, res) {
 //     })
 //     res.send(articleArray)
 // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router
