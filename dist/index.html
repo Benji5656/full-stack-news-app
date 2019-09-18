@@ -10,6 +10,25 @@
 </head>
 <body>
 
+    
+<div class="search">
+    <input class="searchInput" type="text" placeholder="What's new in the news?">
+    <button class="searchButton">Search!</button>
+</div>
+
+<div id="displayNews"></div>
+
+<script id="trendingNews" type="text/x-handlebars-template">
+    {{each trendingNews}}
+        <div class="topStories">
+            <img src={{urlImage}}>
+            <h5 class="title">{{title}}</h5>
+            <p class="description">{{description}}</p>
+            <p class="source">{{source}}</p>
+        </div>
+    {{/each}}
+</script>
+
 
 
 
@@ -19,6 +38,7 @@
     <script src="/handlebars/dist/handlebars.js"></script>
     <script src="/jquery/dist/jquery.js"></script>
     <!-- add route to render.js and other routes -->
+    <script src="Render.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
