@@ -40,7 +40,7 @@ router.get('/news/:query', function (req, res) {
     res.send(newsArticle)
 
     // res.send(ncity)
-})
+})  
 
 
 
