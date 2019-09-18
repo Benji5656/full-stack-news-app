@@ -2,7 +2,7 @@ const temp = new TempManager()
 const rend = new Renderer()
 
 const loadPage = async function(){
-    await temp.getResultsfromAPI()
+    await temp.getResultsFromAPI()
     rend.renderNews(temp.trendingNews)   
 }
 loadPage()
