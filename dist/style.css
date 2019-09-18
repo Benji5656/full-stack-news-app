@@ -1,6 +1,61 @@
+
+body{
+    background-color:#E5E5E5
+}
+
 .search {
     display: flex;
     justify-content: center;
     align-content: center;
-    background-color: bisque;
+    padding-block-end: 25px
+}    
+
+#displayNews{
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 25px;
+    background-color: #2E86AB
+
+}
+.topStoriess{
+    display: grid;
+    margin-top: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    background-color: #2E86AB;
+}
+
+.title{
+
+    display: grid;
+    font-size: 15px;
+    text-align: center;
+    background-color: aqua;
+    align-content: center;
+    
+}
+
+
+.description{
+    display: grid;
+    font-size: 15px;
+    text-align: center;
+    align-content: center;
+    background-color:green;
+}
+
+img{
+    display: grid;
+    align-content: center;
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 200;
+    height: 200px;
+}
+
+.source{
+    
+    background-color:yellow;
 }
