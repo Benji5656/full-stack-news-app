@@ -7,6 +7,7 @@ class TempManager {
         let results = await $.get('/news')
         this.trendingNews = results
     }
+    
 
     async getDataFromResults (query) {
         const topTrending = await $.get(`/news/${query}`)
