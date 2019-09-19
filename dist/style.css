@@ -1,6 +1,6 @@
 
 body{
-    background-color:#E5E5E5
+    background-color: #ECE8EF;
 }
 
 .search {
@@ -10,23 +10,15 @@ body{
     padding-block-end: 25px
 }  
 
-#displayPreferences {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    grid-gap: 25px;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 25px;
-    background-color: rgb(184, 135, 135)
-
-}
-
 #displayNews{  
+    margin: 5%;
+    max-width:100%;
+    min-height: 50px;
     display: grid;
     grid-gap: 25px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 25px;
-    box-shadow: #E5E5E5;
+    box-shadow: #60656F;
 }
 
 .topStories{
@@ -40,7 +32,7 @@ body{
     "i i i i i"
     "d d d d d"
     "d d d d d"
-    ". . . s s";
+    "b b . s s";
     border: 2px solid black;
     border-radius: 8px;
     background-color: #939196;
@@ -51,7 +43,7 @@ body{
     grid-area: t;
     font-size: 20px;
     text-align: center;
-    justify-content: inherit;
+    /* justify-content: inherit; */
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 15px;
@@ -75,7 +67,8 @@ img{
     display: block;
     place-self: center;
     width: 80%;
-    margin-top: 15px;
+    margin-top: 35px;
+    
 }
 
 .source{
@@ -86,3 +79,11 @@ img{
     margin-right: 15px;
     justify-content: inherit;
 }
+
+.bookmark{
+    grid-area: b;
+    background-color: transparent;
+    color: red;
+    border-radius: 0px
+}
+
