@@ -64,37 +64,24 @@ router.get('/news/:query', function (req, res) {
     })
 })
 
+router.get('/articles', function (req, res) {
+    News.find({}, function (err, results) {
+        console.log(results)
+        res.send(results)
+    })
 
+})
 
-router.post('/news', function(req, res) {
-    // const saveClient = new Client(req.body)
-    // saveClient.save(function(err, result) {
-    //     Client.find({}, function (error, client) {
-    //         console.log(client)
-    //     })
-    // })
+router.post('/news', function (req, res) {
+
     console.log(req.body)
     const saveNews = new News(req.body)
-    saveNews.save(function(err, result) {
+    saveNews.save(function (err, result) {
         News.find({}, function (error, search) {
             res.send(search)
         })
     })
-
-        // const saveClient = new Client(req.body)
-        // saveClient.save(function(err, result) {
-        //     Client.find({}, function (error, client) {
-        //         console.log(client)
-        //     })
-        // })
-        console.log(req.body)
-        const newSearch = new News(req.body)
-        newSearch.save(function (err, result) {
-            News.find({}, function (error, search) {
-                res.send(search)
-            })
-        })
-    })
+})
 
 
 

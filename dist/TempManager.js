@@ -2,6 +2,7 @@ class TempManager {
     constructor() {
         this.trendingNews = []
         this.userSearch = []
+        this.savedArticles = []
     }
 
     async getResultsFromAPI() {
@@ -9,6 +10,11 @@ class TempManager {
         this.trendingNews = results
     }
 
+
+    getDataFromDB() {
+        $.get('/articles').then((result) => { this.savedArticles = result })
+        return $.get('/articles')
+    }
 
     async getDataFromResults(query) {
         const userRequest = await $.get(`/news/${query}`)
