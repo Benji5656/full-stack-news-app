@@ -32,6 +32,7 @@
             <img src={{urlImage}}>
             <p class="description">{{description}}</p>
             <p class="source">{{source}}</p> 
+            <p class="url">{{url}}</p>
             <button class="bookmark"><i class="fas fa-bookmark"></i></button>      
         </div>
     {{/each}}
@@ -40,18 +41,16 @@
     <script id="preferences" type="text/x-handlebars-template">
         {{#each userSearch}}
             <div class="mySearches">
-
-                <div>
-                    <p class="title">{{title}}</p>
-                    <img src={{urlImage}}>
-                    <p class="description">{{description}}</p>
-                    <p class="source">{{source}}</p>
-                    <button class="bookmark"><i class="fas fa-bookmark"></i></button>    
-                    <button class="delete"><i class="fas fa-backspace"></i></button> 
-                </div>      
-
+                <h3 class="title">{{title}}</h3>
+                <img src={{urlImage}}>
+                <p class="description">{{description}}</p>
+                <p class="url">{{url}}</p>
+                <p class="source">{{source}}</p>
+                <button class="bookmark"><i class="fas fa-bookmark"></i></button>    
+                <button class="delete"><i class="fas fa-backspace"></i></button>    
             </div>
-        {{/each}}
+            {{/each}}
+        </script>
     </script>
 
     <script id="bookmarked" type="text/x-handlebars-template">
@@ -59,6 +58,7 @@
             <div class="savedForLater">
                 <p class="title"><a href={{url}}>{{title}}</a></p>
                 <p class="source">{{source}}</p>  
+                <button class="delete"><i class="fas fa-backspace"></i></button>
             </div>
         {{/each}}
     </script>
