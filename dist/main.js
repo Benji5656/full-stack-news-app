@@ -14,7 +14,7 @@ const displaySearch = async function() {
     rend.renderSearch(output)
 }
 
-$("body").on("click",".save", async function(){
+$("body").on("click",".bookmark", async function(){
     let preference = $(this).siblings('.title').text()
     console.log(preference + " saved")
     let data = await temp.saveUserInterests(preference)
