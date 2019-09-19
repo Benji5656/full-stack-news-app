@@ -35,8 +35,14 @@ class TempManager {
         })
     }
 
-    deleteArticle(body) {
-        let title = body.title
-        $.ajax
+    deleteArticle(titleDel) {
+
+        $.ajax({
+            url: '/news/'+titleDel,
+            method: "DELETE",
+            success: function () {
+                console.log("Succesful delete article")
+            }
+        })
     }
 }
