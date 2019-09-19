@@ -7,16 +7,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Domine|Libre+Baskerville&display=swap" rel="stylesheet">
     <title>Hackathon News App!</title>
 </head>
 
 <body>
-    <div class="search">
-        <input class="searchInput" type="text" placeholder="What's new in the news?">
-        <button class="searchButton" onclick="displaySearch()">Search!</button>
-    </div>
+
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>Find what you want to read</h1>
+            <p>Save stories for later</p><br>
+            <form action="">
+                    <input type="search">
+                    <i class="fa fa-search" onclick="displaySearch()"></i>
+            </form>   
+        </div>
+    </div> 
+    
+    <div>
+        <nav>
+            <ul>
+                <li><a href="">Business</a></li>
+                <li><a href="">Entertainment</a></li>
+                <li><a href="">General</a></li>
+                <li><a href="">Health</a></li>
+                <li><a href="">Science</a></li>
+                <li><a href="">Sports</a></li>
+                <li><a href="">Technology</a></li>
+            </ul>
+        </nav>
+    </div> 
+
+   
 
     <div id="displayBookmarked"></div>
 
