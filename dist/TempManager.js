@@ -16,4 +16,23 @@ class TempManager {
         console.log(userRequest)
         return(userRequest)
     }
+
+    /*
+    saveUserInterests(userRequest) {
+        this.userSearch.forEach((s) => {
+            if(s.title === userRequest) {
+                $.ajax ({
+                    url: ('/news'),
+                    data: s,
+                    method: 'POST',
+                    success: function() {
+                        console.log("added to DB")
+                    }
+                })
+            }
+        })
+    }
+    */ 
+
+
 }
