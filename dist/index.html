@@ -18,6 +18,8 @@
         <button class="searchButton" onclick="displaySearch()">Search!</button>
     </div>
 
+    <div id="displayBookmarked"></div>
+
     <div id="displayPreferences"></div>
 
     <h2>TOP TRENDING NEWS</h2>
@@ -32,36 +34,31 @@
             <p class="source">{{source}}</p> 
             <button class="bookmark"><i class="fas fa-bookmark"></i></button>    
         </div>
-        <button class="saveTrend"><i class="fas fa-bookmark"></i></button>    
-        <button class="deleteTrend"><i class="fas fa-backspace"></i></button>    
-        <button class="refreshTrend"><i class="fas fa-retweet"></i></button>    
+        <button class="bookmark"><i class="fas fa-bookmark"></i></button>    
     {{/each}}
     </script>
 
     <script id="preferences" type="text/x-handlebars-template">
         {{#each userSearch}}
             <div class="mySearches">
-<<<<<<< HEAD
-                <div>
-                    <p class="title">{{title}}</p>
-                    <img src={{urlImage}}>
-                    <p class="description">{{description}}</p>
-                    <p class="source">{{source}}</p>
-                    <button class="bookmark"><i class="fas fa-bookmark"></i></button>    
-                    <button class="delete"><i class="fas fa-backspace"></i></button>    
-                    <button class="refresh"><i class="fas fa-retweet"></i></button> 
-                </div>   
-=======
                 <h3 class="title">{{title}}</h3>
                 <img src={{urlImage}}>
                 <p class="description">{{description}}</p>
                 <p class="source">{{source}}</p>
                 <button class="bookmark"><i class="fas fa-bookmark"></i></button>    
                 <button class="delete"><i class="fas fa-backspace"></i></button>    
->>>>>>> master
             </div>
-            {{/each}}
-        </script>
+        {{/each}}
+    </script>
+
+    <script id="bookmarked" type="text/x-handlebars-template">
+        {{#each userSaved}}
+            <div class="savedForLater">
+                <p class="title"><a href={{url}}>{{title}}</a></p>
+                <p class="source">{{source}}</p>  
+            </div>
+        {{/each}}
+    </script>
 
 
 

@@ -14,4 +14,11 @@ class Renderer {
         $('#displayPreferences').empty().append(innerHTML)
         $(".searchInput").val("") 
     }
+
+    renderBookmarked(userSaved) {
+        let source = $('#bookmarked').html();
+        let template = Handlebars.compile(source);
+        let innerHTML = template({userSaved});
+        $('#displayBookmarked').empty().append(innerHTML)
+    }
 }
