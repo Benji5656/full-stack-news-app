@@ -20,7 +20,7 @@ loadPage()
 
 
 
-$("body").on("click", ".bookmark", async function () {y
+$("body").on("click", ".bookmark", async function () {
     let title = $(this).siblings('.title').text()
     let description = $(this).siblings('.description').text()
     let url = $(this).siblings('.url').text()
@@ -33,6 +33,7 @@ $("body").on("click", ".bookmark", async function () {y
 })
 
 $("body").on("click", ".deleteDB", function () {   // deleteDB
+    debugger
     // let articleUrl = document.querySelector('#displayBookmarked div:nth-child(2) a').href
     let savedTitle = $(this).closest('div').find('p').text()
     temp.deleteArticle(savedTitle)
