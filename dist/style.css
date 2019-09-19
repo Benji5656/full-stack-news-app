@@ -20,6 +20,11 @@ body{
 }
 .topStoriess{
     display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+    "";
+
     margin-top: 25px;
     border-width: 2px;
     border-style: solid;
@@ -28,18 +33,12 @@ body{
 }
 
 .title{
-
-    display: grid;
     font-size: 15px;
     text-align: center;
-    background-color: aqua;
-    align-content: center;
-    
+    background-color: aqua;    
 }
 
-
 .description{
-    display: grid;
     font-size: 15px;
     text-align: center;
     align-content: center;
@@ -47,15 +46,12 @@ body{
 }
 
 img{
-    display: grid;
-    align-content: center;
     margin-top: 25px;
     margin-left: 25px;
-    width: 200;
-    height: 200px;
+    width: 150;
+    height: 150px;
 }
 
 .source{
-    
     background-color:yellow;
 }
