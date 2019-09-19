@@ -1,6 +1,6 @@
 
 body{
-    background-color:#E5E5E5
+    background-color: #ECE8EF;
 }
 
 .search {
@@ -10,22 +10,15 @@ body{
     padding-block-end: 25px
 }  
 
-#displayPreferences {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    grid-gap: 25px;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 25px;
-    background-color: rgb(184, 135, 135)
-
-}
-
 #displayNews{  
+    margin: 5%;
+    max-width:100%;
+    min-height: 50px;
     display: grid;
     grid-gap: 25px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 25px;
+    box-shadow: #60656F;
 }
 
 .topStories{
@@ -39,30 +32,29 @@ body{
     "i i i i i"
     "d d d d d"
     "d d d d d"
-    ". . . s s";
-    margin-top: 25px;
+    "b b . s s";
     border: 2px solid black;
     border-radius: 8px;
     background-color: #939196;
+    align-content: center
 }
 
 .title{
     grid-area: t;
     font-size: 20px;
     text-align: center;
-    align-content: center;
+    /* justify-content: inherit; */
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 15px;
     font-family: 'Libre Baskerville', serif;
 }
 
-
 .description{
     grid-area: d;
     font-size: 15px;
     text-align: justify;
-    align-content: center;
+    width: 80%;
     font-family: 'Domine', serif;
     margin-left: 15px;
     margin-right: 15px;
@@ -73,12 +65,9 @@ body{
 img{
     grid-area: i;
     display: block;
-    align-content: center;
-    width: 250px;
-    height: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
+    place-self: center;
+    width: 80%;
+    margin-top: 35px;
     
 }
 
@@ -88,4 +77,13 @@ img{
     text-align: justify;
     margin-left: 15px;
     margin-right: 15px;
+    justify-content: inherit;
 }
+
+.save{
+    grid-area: b;
+    background-color: transparent;
+    color: red;
+    border-radius: 0px
+}
+

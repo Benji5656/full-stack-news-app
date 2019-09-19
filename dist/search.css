@@ -1,0 +1,32 @@
+
+ #displayPreferences { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(184, 135, 135)
+}
+
+.mySearches{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 2%;
+    margin-right: 2%
+}
+
+.mySearches > div{
+    background-color: antiquewhite;
+    width: 200px;
+    margin: 5px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 15px
+}
+
+.mySearches > img{
+    align-content: center;
+    height: 50px;
+    width: 50px
+}

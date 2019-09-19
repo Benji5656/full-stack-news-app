@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="search.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Domine|Libre+Baskerville&display=swap" rel="stylesheet">    <title>Hackathon News App!</title>
+    <link href="https://fonts.googleapis.com/css?family=Domine|Libre+Baskerville&display=swap" rel="stylesheet">
+    <title>Hackathon News App!</title>
 </head>
 
 <body>
@@ -15,6 +17,8 @@
         <input class="searchInput" type="text" placeholder="What's new in the news?">
         <button class="searchButton" onclick="displaySearch()">Search!</button>
     </div>
+
+    <div id="displayBookmarked"></div>
 
     <div id="displayPreferences"></div>
 
@@ -24,16 +28,13 @@
     <script id="trendingNews" type="text/x-handlebars-template">
     {{#each topNews}}
         <div class="topStories">
-            <button class="bookmark"><i class="fas fa-bookmark"></i></button>    
             <h3 class="title">{{title}}</h3>
             <img src={{urlImage}}>
             <p class="description">{{description}}</p>
             <p class="source">{{source}}</p> 
             <p class="url">{{url}}</p>
+            <button class="bookmark"><i class="fas fa-bookmark"></i></button>      
         </div>
-        <button class="saveTrend"><i class="fas fa-bookmark"></i></button>    
-        <button class="deleteTrend"><i class="fas fa-backspace"></i></button>    
-        <button class="refreshTrend"><i class="fas fa-retweet"></i></button>    
     {{/each}}
     </script>
 
@@ -50,12 +51,16 @@
             </div>
             {{/each}}
         </script>
+    </script>
 
-
-
-    
-
-
+    <script id="bookmarked" type="text/x-handlebars-template">
+        {{#each userSaved}}
+            <div class="savedForLater">
+                <p class="title"><a href={{url}}>{{title}}</a></p>
+                <p class="source">{{source}}</p>  
+            </div>
+        {{/each}}
+    </script>
 
 
 
