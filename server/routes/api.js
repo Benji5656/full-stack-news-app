@@ -63,4 +63,23 @@ router.get('/news/:query', function (req, res) {
     }) 
 })
 
+
+router.post('/news', function(req, res) {
+    const saveClient = new Client(req.body)
+    saveClient.save(function(err, result) {
+        Client.find({}, function (error, client) {
+            console.log(client)
+        })
+    })
+    const newSearch = new News(req.body)
+    newSearch.save(function(err, result) {
+        News.find({}, function (error, search) {
+            res.send(search)
+        })
+    })
+})
+
+
+
+
 module.exports = router

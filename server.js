@@ -14,7 +14,7 @@ app.use( bodyParser.urlencoded( { extended: false } ) )
 
 
 // Mongoose setup
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/forecast', { useNewUrlParser: true})
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/NewsApp', { useNewUrlParser: true})
 
 app.use('/', api)
 
