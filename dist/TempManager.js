@@ -1,6 +1,7 @@
 class TempManager {
     constructor() {
         this.trendingNews = []
+        this.userSearch = []
     }
 
     async getResultsFromAPI () {
@@ -10,9 +11,9 @@ class TempManager {
     
 
     async getDataFromResults (query) {
-        const topTrending = await $.get(`/news/${query}`)
-        this.trendingNews.push(topTrending)
-        console.log(topTrending)
-        return(topTrending)
+        const userRequest = await $.get(`/news/${query}`)
+        this.userSearch.push(userRequest)
+        console.log(userRequest)
+        return(userRequest)
     }
 }

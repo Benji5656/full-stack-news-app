@@ -8,7 +8,18 @@ body{
     justify-content: center;
     align-content: center;
     padding-block-end: 25px
-}    
+}  
+
+#displayPreferences {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 25px;
+    background-color: rgb(184, 135, 135)
+
+}
 
 #displayNews{
     display: grid;
