@@ -85,10 +85,10 @@ router.post('/news', function (req, res) {
 
 
 
-router.delete('/news/:newsurl', function (req, res) {
-    let newsUrl = req.params.newsurl
+router.delete('/news/:newstitle', function (req, res) {
+    let newsHead = req.params.newstitle
 
-    News.findOne({ url: newsUrl }, function (err, reply) {
+    News.findOne({ title: newsHead }, function (err, reply) {
 
         reply.remove()
         News.find({}, function (err, response) {
