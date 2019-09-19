@@ -77,11 +77,13 @@
 
     <script id="bookmarked" type="text/x-handlebars-template">
         {{#each userSaved}}
-            <div class="savedForLater">
+            <ul class="savedForLater">
+                <li>
                 <p class="title"><a href={{url}}>{{title}}</a></p>
                 <p class="source">{{source}}</p>  
                 <button class="deleteDB" ><i class="fas fa-backspace"></i></button>
-            </div>
+                </li>
+            </ul>
         {{/each}}
     </script>
 
