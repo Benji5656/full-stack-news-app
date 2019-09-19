@@ -12,6 +12,8 @@
     justify-content: center;
     margin-top: 5%;
     margin-bottom: 5%;
+    margin-left: 2%;
+    margin-right: 2%
 }
 
 .mySearches > div{
@@ -19,11 +21,12 @@
     width: 200px;
     margin: 5px;
     text-align: center;
-    line-height: 10px;
+    line-height: 25px;
     font-size: 15px
 }
 
 .mySearches > img{
+    align-content: center;
     height: 50px;
     width: 50px
 }
