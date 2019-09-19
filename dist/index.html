@@ -53,11 +53,10 @@
     {{#each topNews}}
         <div class="topStories">
             <h3 class="title">{{title}}</h3>
-            <img src={{urlImage}}>
-            <p class="description">{{description}}</p>
-            <p class="source">{{source}}</p> 
-            <p class="url">{{url}}</p>
-            <button class="bookmark"><i class="fas fa-bookmark"></i></button>      
+            <img class="image"src={{urlImage}}>
+            <p class="description">{{description}}<a class="url" href={{url}} target="_blank"> Read More</a> </p>
+            <p class="source">{{source}}</p>
+            <button class="bookmark"><i class="fas fa-plus-circle"></i></i></button>      
         </div>
     {{/each}}
     </script>
@@ -67,11 +66,8 @@
             <div class="mySearches">
                 <h3 class="title">{{title}}</h3>
                 <img src={{urlImage}}>
-                <p class="description">{{description}}</p>
-                <p class="url">{{url}}</p>
-                <p class="source">{{source}}</p>
-                <button class="bookmark"><i class="fas fa-bookmark"></i></button>    
-                <button class="delete"><i class="fas fa-backspace"></i></button>    
+                <p class="description">{{description}} <a class="url" href={{url}}></a></p>
+                <button class="bookmark"><i class="fas fa-bookmark"></i></button>        
             </div>
             {{/each}}
         </script>

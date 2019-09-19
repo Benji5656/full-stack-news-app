@@ -2,7 +2,7 @@ const temp = new TempManager()
 const rend = new Renderer()
 
 const loadPage = async function () {
-    debugger
+    
     temp.getDataFromDB().then((data) => {
         rend.renderBookmarked(data)})
     await temp.getResultsFromAPI()
@@ -22,7 +22,7 @@ loadPage()
 
 
 $("body").on("click", ".bookmark", async function () {
-    debugger
+    
     let title = $(this).siblings('.title').text()
     let description = $(this).siblings('.description').text()
     let url = $(this).siblings('.url').text()
