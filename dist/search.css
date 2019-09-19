@@ -1,18 +1,13 @@
 
-#displayPreferences { 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ #displayPreferences { 
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     background-color: rgb(184, 135, 135)
 }
 
 .mySearches{
-   
-    grid-template-columns: repeat(2,2fr);
-    grid-template-rows: repeat(2,2fr);
-    grid-template-areas:
-    "i t"
-    "d .";
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
@@ -28,18 +23,15 @@
     margin: 5px;
     text-align: center;
     line-height: 25px;
-    font-size: 15px;
-    grid-area: i
+    font-size: 15px
 }
 
 .mySearches > .title{
     align-content: center;
-    font-size: 25px;
-    grid-template: t
+    font-size: 25px
 } 
 
 .mySearches > .description{
     text-align: justify;
-    font-size: 15px;
-    grid-template: d
+    font-size: 15px
 }

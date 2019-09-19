@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="search.css">
-    <link rel="stylesheet" href="saveLater.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Domine|Libre+Baskerville&display=swap" rel="stylesheet">
@@ -58,7 +57,7 @@
             <img class="image"src={{urlImage}}>
             <p class="description">{{description}}<a class="url" href={{url}} target="_blank"> Read More</a> </p>
             <p class="source">{{source}}</p>
-            <button class="bookmark"><i class="far fa-bookmark"></i></button>      
+            <button class="bookmark"><i class="fas fa-plus-circle"></i></i></button>      
         </div>
     {{/each}}
     </script>
@@ -77,13 +76,11 @@
 
     <script id="bookmarked" type="text/x-handlebars-template">
         {{#each userSaved}}
-            <ul class="savedForLater">
-                <li>
+            <div class="savedForLater">
                 <p class="title"><a href={{url}}>{{title}}</a></p>
                 <p class="source">{{source}}</p>  
                 <button class="deleteDB" ><i class="fas fa-backspace"></i></button>
-                </li>
-            </ul>
+            </div>
         {{/each}}
     </script>
 
