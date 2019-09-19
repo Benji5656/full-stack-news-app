@@ -16,7 +16,11 @@ const displaySearch = async function() {
 
 $("body").on("click",".bookmark", async function(){
     debugger
-    let preference = $(this).siblings('.title').text()
-    console.log(preference + " saved")
-    let data = await temp.saveUserInterests(preference)
+    let title = $(this).siblings('.title').text()
+    let description = $(this).siblings('.description').text()
+    let url = $(this).siblings('.url').text()
+    let saved = true;
+    let body ={title,description,url,saved}
+    let data = await temp.saveUserInterests(body)
+    rend.renderSearch(data)
 })

@@ -4,35 +4,33 @@ class TempManager {
         this.userSearch = []
     }
 
-    async getResultsFromAPI () {
+    async getResultsFromAPI() {
         let results = await $.get('/news')
         this.trendingNews = results
     }
-    
 
-    async getDataFromResults (query) {
+
+    async getDataFromResults(query) {
         const userRequest = await $.get(`/news/${query}`)
         this.userSearch.push(userRequest)
         console.log(userRequest)
-        return(userRequest)
+        return (userRequest)
     }
 
 
-    saveUserInterests(userRequest) {
-        this.userSearch.forEach((s) => {
-            if(s.title === userRequest) {
-                $.ajax ({
-                    url: ('/news'),
-                    data: s,
-                    method: 'POST',
-                    success: function() {
-                        console.log("added to DB")
-                    }
-                })
+    saveUserInterests(body) {
+        $.ajax({
+            url: ('/news'),
+            data: body,
+            method: 'POST',
+            success: function () {
+                console.log("added to DB")
             }
         })
     }
-     
 
-
+    deleteArticle(body) {
+        let title = body.title
+        $.ajax
+    }
 }
