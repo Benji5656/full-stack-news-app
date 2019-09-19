@@ -1,0 +1,126 @@
+/* BANNER */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.hero-image {
+    background-image: url(https://pro2-bar-s3-cdn-cf4.myportfolio.com/961ce1a017a7af731901a4cc91a9c2d4/f193f1cc-65fd-4bd7-8ea9-4e3f287ffd7f_car_7x5.gif?h=634a930edf97189eb204441197716f14);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+
+  form{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+
+/* NAV BAR */
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+    
+  nav{
+    background: #333;
+  }
+  
+  nav ul{
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav a{
+    text-align: start;
+    color: #fff;
+    display: block;
+    padding: 10px;
+  }
+  
+  nav a:hover{
+    background-color: #555;
+  }
+
+  
+
+@media screen and (min-width: 768px) {
+    nav ul {
+        display: flex;
+        justify-content: center;
+        flex-grow: 
+    }
+} 
+
+/* SEARCH BUTTON */
+
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+form:hover{
+    width: 200px;
+    cursor: pointer;
+}
+
+form:hover input{
+    display: block;
+}
+
+form:hover .fa{
+    background: #07051a;
+    color: white;
+}
+
+
