@@ -10,6 +10,8 @@ const NewsResult = new Schema({
     url: String,
     urlImage: String,
     publishedAt: String,
+    saved: Boolean,
+    
 })
 
 
