@@ -13,3 +13,4 @@ const displaySearch = async function() {
     let output = await temp.getDataFromResults(input)
     rend.renderSearch(output)
 }
+
