@@ -15,6 +15,7 @@ const displaySearch = async function() {
 }
 
 $("body").on("click",".bookmark", async function(){
+    debugger
     let preference = $(this).siblings('.title').text()
     console.log(preference + " saved")
     let data = await temp.saveUserInterests(preference)
