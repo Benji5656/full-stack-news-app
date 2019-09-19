@@ -25,7 +25,7 @@ router.get('/news', function (req, res) {
         newsArticle = searchNews.articles.forEach(a => {
             newsArticles = new News({
                 source: a.source.name,  //location.name
-                author: a.author,                         
+                author: a.author,
                 title: a.title,
                 description: a.description,
                 url: a.url,
@@ -44,12 +44,12 @@ router.get('/news/:query', function (req, res) {
     // console.log(search)
     let searchArray = []                            //may want to use globally later
 
-    request(`https://newsapi.org/v2/everything?q=${search}&pageSize=3&apiKey=${apiKey}`, function (error, response, body) {
+    request(`https://newsapi.org/v2/everything?q=${search}&pageSize=6&apiKey=${apiKey}`, function (error, response, body) {
         userSearches = JSON.parse(body)
         newsArticle = userSearches.articles.forEach(a => {
             searchedArticles = new News({
-                source: a.source.name,  
-                author: a.author,                         
+                source: a.source.name,
+                author: a.author,
                 title: a.title,
                 description: a.description,
                 url: a.url,
@@ -60,25 +60,33 @@ router.get('/news/:query', function (req, res) {
             // console.log(searchArray)
         })
         res.send(searchArray)
-    }) 
-})
-
-
-router.post('/news', function(req, res) {
-    // const saveClient = new Client(req.body)
-    // saveClient.save(function(err, result) {
-    //     Client.find({}, function (error, client) {
-    //         console.log(client)
-    //     })
-    // })
-    console.log(req.body)
-    const newSearch = new News(req.body)
-    newSearch.save(function(err, result) {
-        News.find({}, function (error, search) {
-            res.send(search)
-        })
     })
 })
+
+
+router.post('/news', function (req, res) {
+    const saveClient = new Client(req.body)
+    saveClient.save(function (err, result) {
+        Client.find({}, function (error, client) {
+            console.log(client)
+        })
+    })
+
+        // const saveClient = new Client(req.body)
+        // saveClient.save(function(err, result) {
+        //     Client.find({}, function (error, client) {
+        //         console.log(client)
+        //     })
+        // })
+        console.log(req.body)
+        const newSearch = new News(req.body)
+        newSearch.save(function (err, result) {
+            News.find({}, function (error, search) {
+                res.send(search)
+            })
+        })
+    })
+
 
 
 
