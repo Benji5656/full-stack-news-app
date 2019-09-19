@@ -17,7 +17,7 @@ class TempManager {
         return(userRequest)
     }
 
-    /*
+
     saveUserInterests(userRequest) {
         this.userSearch.forEach((s) => {
             if(s.title === userRequest) {
@@ -32,7 +32,7 @@ class TempManager {
             }
         })
     }
-    */ 
+     
 
 
 }
