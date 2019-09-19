@@ -67,6 +67,14 @@ body, html {
     padding: 5px;
 }
 
+@media screen and (min-width: 768px) {
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-grow: 1
+    }
+} 
+
 /* SEARCH BUTTON */
 
 input{
@@ -113,9 +121,4 @@ form:hover .fa{
     color: white;
 }
 
-  @media screen and (min-width: 768px) {
-    nav ul {
-        display: flex;
-        justify-content: flex-start;
-    }
-} 
+ 
