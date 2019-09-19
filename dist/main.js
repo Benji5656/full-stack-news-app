@@ -7,10 +7,9 @@ const loadPage = async function(){
 }
 loadPage()
 
-const displaySearch = function() {
-    let input = $("#searchInput").val()
+const displaySearch = async function() {
+    let input = $(".searchInput").val()
     console.log(input)
-    // let output = await temp.getDataFromResults(input)
-    // output = [output]
-    // rend.renderNews(output)
+    let output = await temp.getDataFromResults(input)
+    rend.renderSearch(output)
 }
