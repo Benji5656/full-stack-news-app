@@ -10,13 +10,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: row;
     margin-top: 5%;
     margin-bottom: 5%;
     margin-left: 2%;
     margin-right: 2%
 }
 
-.mySearches > div{
+.mySearches > img{
     background-color: antiquewhite;
     width: 200px;
     margin: 5px;
@@ -25,8 +26,12 @@
     font-size: 15px
 }
 
-.mySearches > img{
+.mySearches > .title{
     align-content: center;
-    height: 50px;
-    width: 50px
+    font-size: 25px
+} 
+
+.mySearches > .description{
+    text-align: justify;
+    font-size: 15px
 }
