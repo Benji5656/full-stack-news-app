@@ -80,7 +80,7 @@ img{
     justify-content: inherit;
 }
 
-.bookmark{
+.save{
     grid-area: b;
     background-color: transparent;
     color: red;
