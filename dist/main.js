@@ -33,7 +33,6 @@ $("body").on("click", ".bookmark", async function () {
 })
 
 $("body").on("click", ".deleteDB", function () {   // deleteDB
-    debugger
     // let articleUrl = document.querySelector('#displayBookmarked div:nth-child(2) a').href
     let savedTitle = $(this).closest('div').find('p').text()
     temp.deleteArticle(savedTitle)
