@@ -24,8 +24,9 @@ body{
 #displayNews{  
     display: grid;
     grid-gap: 25px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 25px;
+    box-shadow: #E5E5E5;
 }
 
 .topStories{
@@ -40,17 +41,17 @@ body{
     "d d d d d"
     "d d d d d"
     ". . . s s";
-    margin-top: 25px;
     border: 2px solid black;
     border-radius: 8px;
     background-color: #939196;
+    align-content: center
 }
 
 .title{
     grid-area: t;
     font-size: 20px;
     text-align: center;
-    align-content: center;
+    justify-content: inherit;
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 15px;
@@ -61,7 +62,7 @@ body{
     grid-area: d;
     font-size: 15px;
     text-align: justify;
-    align-content: center;
+    width: 80%;
     font-family: 'Domine', serif;
     margin-left: 15px;
     margin-right: 15px;
@@ -72,13 +73,9 @@ body{
 img{
     grid-area: i;
     display: block;
-    align-content: center;
-    width: 250px;
-    height: 150px;
-    margin-left: auto;
-    margin-right: auto;
+    place-self: center;
+    width: 80%;
     margin-top: 15px;
-    
 }
 
 .source{
@@ -87,4 +84,5 @@ img{
     text-align: justify;
     margin-left: 15px;
     margin-right: 15px;
+    justify-content: inherit;
 }
