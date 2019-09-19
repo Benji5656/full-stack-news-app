@@ -20,6 +20,7 @@ router.get('/news', function (req, res) {
 
     request(`https://newsapi.org/v2/top-headlines?country=us&pageSize=6&apiKey=${apiKey}`, function (error, response, body) {
         searchNews = JSON.parse(body)
+        console.log(searchNews)
         articleArray = []
         // console.log(searchNews)
         newsArticle = searchNews.articles.forEach(a => {
@@ -64,11 +65,19 @@ router.get('/news/:query', function (req, res) {
 })
 
 
-router.post('/news', function (req, res) {
-    const saveClient = new Client(req.body)
-    saveClient.save(function (err, result) {
-        Client.find({}, function (error, client) {
-            console.log(client)
+
+router.post('/news', function(req, res) {
+    // const saveClient = new Client(req.body)
+    // saveClient.save(function(err, result) {
+    //     Client.find({}, function (error, client) {
+    //         console.log(client)
+    //     })
+    // })
+    console.log(req.body)
+    const saveNews = new News(req.body)
+    saveNews.save(function(err, result) {
+        News.find({}, function (error, search) {
+            res.send(search)
         })
     })
 
@@ -89,6 +98,16 @@ router.post('/news', function (req, res) {
 
 
 
+router.delete('/news/:newsurl', function (req, res) {
+    let newsUrl = req.params.newsurl
 
+    News.findOne({ url: newsUrl }, function (err, reply) {
+
+        reply.remove()
+        News.find({}, function (err, response) {
+            res.send(response)
+        })
+    })
+})
 
 module.exports = router
