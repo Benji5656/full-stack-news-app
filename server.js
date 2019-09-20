@@ -20,4 +20,4 @@ app.use('/', api)
 
 
 const PORT = 4320
-app.listen(process.env.PORT || PORT, () => console.log(`Running on port ${port}`))
+app.listen(process.env.PORT || PORT, () => console.log(`Running on port ${PORT}`))
