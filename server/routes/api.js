@@ -20,7 +20,7 @@ router.get('/news', function (req, res) {
 
     request(`https://newsapi.org/v2/top-headlines?country=us&pageSize=6&apiKey=${apiKey}`, function (error, response, body) {
         searchNews = JSON.parse(body)
-        console.log(searchNews)
+        // console.log(searchNews)
         articleArray = []
         // console.log(searchNews)
         newsArticle = searchNews.articles.forEach(a => {
@@ -87,9 +87,8 @@ router.post('/news', function (req, res) {
 
 router.delete('/news/:newstitle', function (req, res) {
     let newsHead = req.params.newstitle
-
+    console.log(newsHead)
     News.findOne({ title: newsHead }, function (err, reply) {
-
         reply.remove()
         News.find({}, function (err, response) {
             res.send(response)
