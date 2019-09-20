@@ -1,9 +1,18 @@
+@keyframes appear{
+    from{
+        margin-left: 500%
+    }
+    to{
+        margin-right: 0%
+    }
+}
 
 #displayPreferences { 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    flex-wrap: wrap;
     margin: 3%;
+    animation-name: appear;
+    animation-duration: 3s
 } 
 
 .mySearches{
@@ -13,21 +22,25 @@
     margin-bottom: 5%;
     margin-left: 2%;
     margin-right: 2%;
-        height: 60vh;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-areas: 
-        "t t t t t t"
-        "i i i i i i"
-        "i i i i i i"
-        "d d d d d d"
-        "d d d d d d"
-        "b b . . s s";
-        border: 2px solid black;
-        border-radius: 3px;
-        align-content: center
+    height: 60vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "t t t t t t"
+    "i i i i i i"
+    "i i i i i i"
+    "d d d d d d"
+    "d d d d d d"
+    ". . b b . .";
+    border: 2px solid #adb68c;
+    border-radius: 3px;
+    align-content: center
     
+}
+
+.mySearches:hover{
+    border-color: black
 }
 
 .mySearches > img{
@@ -39,6 +52,7 @@
     grid-area: i;
     max-width: 80%;
     max-height: 90%;
+    border-radius: 2px
 }
 
 .mySearches > .title{
