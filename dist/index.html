@@ -21,7 +21,7 @@
             <h1>Find what you want to read</h1>
             <p>Save stories for later</p><br>
             <form action="">
-                    <input type="search">
+                    <input class="searchInput" type="search">
                     <i class="fa fa-search" onclick="displaySearch()"></i>
             </form>   
         </div>
@@ -30,14 +30,14 @@
     <div>
         <nav>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Business</a></li>
-                <li><a href="">Entertainment</a></li>
-                <li><a href="">General</a></li>
-                <li><a href="">Health</a></li>
-                <li><a href="">Science</a></li>
-                <li><a href="">Sports</a></li>
-                <li><a href="">Technology</a></li>
+                <li onclick="newPage()" value="Home" class="Home"><a href="">Home</a></li>
+                <li onclick="newPage()" value="Business" class="Business"><a href="">Business</a></li>
+                <li onclick="newPage()" value="Entertainment" class="Entertainment"><a href="">Entertainment</a></li>
+                <li onclick="newPage()" value="General" class="General"><a href="">General</a></li>
+                <li onclick="newPage()" value="Health" class="Health"><a href="">Health</a></li>
+                <li onclick="newPage()" value="Science" class="Science"><a href="">Science</a></li>
+                <li onclick="newPage()" value="Sports" class="Sports"><a href="">Sports</a></li>
+                <li onclick="newPage()" value="Technology" class="Technology"><a href="">Technology</a></li>
             </ul>
         </nav>
     </div> 
@@ -77,19 +77,19 @@
 
     <script id="bookmarked" type="text/x-handlebars-template">
         {{#each userSaved}}
-            <div class="savedForLater"> 
+            <div class="savedForLater">
                 <p class="title"><a href={{url}}>{{title}}</a></p>
                 <p class="source">{{source}}</p>  
-                <button class="deleteDB" ><i class="fas fa-backspace"></i></button> 
+                <button class="deleteDB" ><i class="fas fa-backspace"></i></button>
             </div>
-        {{/each}}
+            {{/each}}
+
     </script>
 
 
 
     <script src="/handlebars/dist/handlebars.js"></script>
     <script src="/jquery/dist/jquery.js"></script>
-    <!-- add route to render.js and other routes -->
     <script src="Render.js"></script>
     <script src="TempManager.js"></script>
     <script src="main.js"></script>
