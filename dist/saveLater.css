@@ -1,12 +1,10 @@
 #displayBookmarked{
-    margin: 1%;
     display: flex;
     flex-direction: row;
     border-left: solid;
     border-top: solid;
     border-bottom: solid;
-    justify-content:space-between;
-    
+    justify-content:space-between   
 }
 
 .savedForLater{
@@ -14,7 +12,7 @@
     border-right: solid;
     border-radius: 0.5px;
     flex-grow: 1;
-    flex-shrink: 1;
+    flex-shrink: 1
 }
 
 .savedForLater > .title{
