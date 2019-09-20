@@ -4,10 +4,10 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     flex-wrap: wrap;
     margin: 3%;
-    background-color: rgba(180, 160, 160, 0.479)
 } 
 
 .mySearches{
+    background-color: rgba(180, 160, 160, 0.479);
     justify-content: center;
     margin-top: 5%;
     margin-bottom: 5%;

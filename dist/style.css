@@ -1,6 +1,7 @@
 
 body{
-    background-color: #ECE8EF;
+    background-color: #465362;
+    
 }
 
 .search {
@@ -21,7 +22,6 @@ body{
     font-family: 'Noto Serif', serif;
 }
 
-
 #displayNews{  
     margin: 5%;
     max-width:100%;
@@ -29,9 +29,21 @@ body{
     display: grid;
     grid-gap: 25px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    animation-name: appear;
+    animation-duration: 3s
+}
+
+@keyframes appear{
+    from{
+        margin-left: 500%
+    }
+    to{
+        margin-right: 0%
+    }
 }
 
 .topStories{
+    background-color: #F9F7F3;
     height: 60vh;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -46,10 +58,12 @@ body{
     border: 2px solid black;
     border-radius: 3px;
     align-content: center;
-    box-shadow: 8px 8px 8px rgba(42, 42, 42, 0.568) 
+    box-shadow: 3px 3px 3px rgba(87, 79, 87, 0.287);
 }
 .topStories:hover{
-    height: 65vh;
+   border-color: rgba(112, 71, 128, 0.075);
+   border-radius: 2px
+    /* width: 30vh */
 }
 
 
@@ -67,7 +81,6 @@ body{
     text-align: justify;
     place-self: center;
     font-family: 'Domine', serif;
-    
     max-width: 80%;
     max-height: 90%;
 }
@@ -89,5 +102,8 @@ body{
     background-color: transparent;
     width: 100%;
     color: black;
+}
+.bookmark:active{
+    color: red
 }
 
