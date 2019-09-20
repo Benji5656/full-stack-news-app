@@ -1,7 +1,6 @@
 
 body{
-    background-color: #465362;
-    
+    background-color: #D0C4DF;
 }
 
 .search {
@@ -43,7 +42,7 @@ body{
 }
 
 .topStories{
-    background-color: #F9F7F3;
+    background-color: #adb68c;
     height: 60vh;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -55,13 +54,13 @@ body{
     "d d d d d d"
     "d d d d d d"
     ". . b b . .";
-    border: 2px solid black;
+    border: 2px solid rgba(35, 48, 161, 0.89);
     border-radius: 3px;
     align-content: center;
-    box-shadow: 3px 3px 3px rgba(87, 79, 87, 0.287);
+    box-shadow: 3px 3px 3px rgba(129, 127, 127, 0.616);
 }
 .topStories:hover{
-   border-color: rgba(112, 71, 128, 0.075);
+   border-color: black;
    border-radius: 2px
     /* width: 30vh */
 }
