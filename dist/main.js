@@ -14,10 +14,14 @@ const displaySearch = async function () {
     let output = await temp.getDataFromResults(input)
     rend.renderSearch(output)
 }
-
 loadPage()
 
 
+$('li').click( async function() {
+   let page = $(this).text()
+   let newPage = await temp.getDataFromResults(page)
+   rend.renderNews(newPage)
+})
 
 
 $("body").on("click", ".bookmark", async function () {
@@ -39,15 +43,4 @@ $("body").on("click", ".deleteDB", function () {   // deleteDB
     return temp.getDataFromDB().then((data) => {
         loadPage()
     })
-}
-)
-// let deleteDB = function () {
-//     debugger
-//     let articleUrl = $(this).siblings('.url').text()
-//     let source = $(this).siblings('.source').text()
-//     temp.deleteArticle(articleUrl, source)
-//     return manager.getDataFromDB().then((data) => {
-//         loadPage()
-//     })
-    
-// }
+})

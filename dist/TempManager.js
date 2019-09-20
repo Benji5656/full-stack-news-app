@@ -19,7 +19,7 @@ class TempManager {
     async getDataFromResults(query) {
         const userRequest = await $.get(`/news/${query}`)
         this.userSearch.push(userRequest)
-        console.log(userRequest)
+        // console.log(userRequest)
         return (userRequest)
     }
 

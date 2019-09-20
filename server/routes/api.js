@@ -74,7 +74,7 @@ router.get('/articles', function (req, res) {
 
 router.post('/news', function (req, res) {
 
-    console.log(req.body)
+    // console.log(req.body)
     const saveNews = new News(req.body)
     saveNews.save(function (err, result) {
         News.find({}, function (error, search) {
