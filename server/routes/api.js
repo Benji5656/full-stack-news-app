@@ -66,7 +66,7 @@ router.get('/news/:query', function (req, res) {
 
 router.get('/articles', function (req, res) {
     News.find({}, function (err, results) {
-        console.log(results)
+        // console.log(results)
         res.send(results)
     })
 
