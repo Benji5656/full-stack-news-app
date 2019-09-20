@@ -52,19 +52,19 @@
     <div id="displayPreferences"></div>
 
     <h2 class="header">TOP TRENDING NEWS</h2>
-    <div id="displayNews"></div>
+    <div id="displayNews"></div>  
 
-    <script id="trendingNews" type="text/x-handlebars-template">
-    {{#each topNews}}
-        <div class="topStories">
-            <h3 class="title">{{title}}</h3>
-            <img class="image"src={{urlImage}}>
-            <p class="description">{{description}}<a class="url" href={{url}} target="_blank"> Read More</a> </p>
-            <p class="source">{{source}}</p>
-            <button class="bookmark"><i class="far fa-bookmark"></i></button>      
-        </div>
-    {{/each}}
-    </script>
+        <script id="trendingNews" type="text/x-handlebars-template">
+        {{#each topNews}}
+            <div class="topStories">
+                <h3 class="title">{{title}}</h3>
+                <img class="image"src={{urlImage}}>
+                <p class="description">{{description}}<a class="url" href={{url}} target="_blank"> Read More</a> </p>
+                <p class="source">{{source}}</p>
+                <button class="bookmark"><i class="far fa-bookmark"></i></button>  
+            </div>
+        {{/each}}
+        </script>
 
     <script id="preferences" type="text/x-handlebars-template">
         {{#each userSearch}}
