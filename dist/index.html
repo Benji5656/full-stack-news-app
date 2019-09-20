@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Domine|Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Oswald|Playfair+Display&display=swap" rel="stylesheet">
     <title>Hackathon News App!</title>
 </head>
 
@@ -44,12 +45,13 @@
     </div> 
 
    
-
+    <h2 class="saveNews">NEWS SAVED</h2>
+    
     <div id="displayBookmarked"></div>
 
     <div id="displayPreferences"></div>
 
-    <h2>TOP TRENDING NEWS</h2>
+    <h2 class="header">TOP TRENDING NEWS</h2>
     <div id="displayNews"></div>
 
     <script id="trendingNews" type="text/x-handlebars-template">
@@ -80,8 +82,8 @@
         {{#each userSaved}}
             <div class="savedForLater">
                 <p class="title"><a href={{url}}>{{title}}</a></p>
-                <p class="source">{{source}}</p>  
-                <button class="deleteDB" ><i class="fas fa-backspace"></i></button>
+                <p class="source">{{source}} <button class="deleteDB"><i class="fas fa-backspace"></i></button></p>  
+                <!-- <button class="deleteDB"><i class="fas fa-backspace"></i></button> -->
             </div>
             {{/each}}
 
