@@ -20,7 +20,7 @@ loadPage()
 
 
 
-$("body").on("click", ".bookmark", async function () {y
+$("body").on("click", ".bookmark", async function () {
     let title = $(this).siblings('.title').text()
     let description = $(this).siblings('.description').text()
     let url = $(this).siblings('.url').text()
