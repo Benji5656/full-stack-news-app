@@ -20,6 +20,7 @@ loadPage()
 $('li').click( async function() {
    let page = $(this).text()
    let newPage = await temp.getDataFromResults(page)
+   $('#displayPreferences').empty()
    rend.renderNews(newPage)
 })
 
@@ -38,7 +39,7 @@ $("body").on("click", ".bookmark", async function () {
 
 $("body").on("click", ".deleteDB", function () {   // deleteDB
     // let articleUrl = document.querySelector('#displayBookmarked div:nth-child(2) a').href
-    let savedTitle = $(this).closest('div').find('p').text()
+    let savedTitle = $(this).closest('div').find('.title').text()
     temp.deleteArticle(savedTitle)
     return temp.getDataFromDB().then((data) => {
         loadPage()
