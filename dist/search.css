@@ -7,11 +7,11 @@
 }
 
 .mySearches{
-   
-    grid-template-columns: repeat(2,2fr);
-    grid-template-rows: repeat(2,2fr);
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
     grid-template-areas:
-    "i t"
+    "i "
     "d .";
     flex-wrap: wrap;
     justify-content: center;

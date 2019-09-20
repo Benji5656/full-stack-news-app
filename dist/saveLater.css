@@ -1,12 +1,25 @@
 #displayBookmarked{
-    background-color: aqua
+    margin: 1%;
+    display: flex;
+    flex-direction: row;
+    border-left: solid;
+    border-top: solid;
+    border-bottom: solid;
+    /* flex-wrap: wrap */
+}
+
+.savedForLater{
+    border-right: solid;
+    border-radius: 0.5px;
+    flex-grow: 1;
+    flex-shrink: 1
 }
 
 .savedForLater > .title{
-    font-size: 10px;
+    font-size: 15px;
+    font-family: 'Noto Serif', serif;
 }
 
-.savedForLater > .deleteDB{
-
-    direction: rtl;
+.deleteDB{
+    align-content: center
 }

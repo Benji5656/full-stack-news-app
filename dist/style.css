@@ -10,6 +10,17 @@ body{
     padding-block-end: 25px
 }  
 
+.header{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+}
+.saveNews{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+}
+
 #displayNews{  
     margin: 5%;
     max-width:100%;
@@ -18,7 +29,6 @@ body{
     grid-gap: 25px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 25px;
-    box-shadow: #60656F;
 }
 
 .topStories{
@@ -32,10 +42,9 @@ body{
     "i i i i i i"
     "d d d d d d"
     "d d d d d d"
-    "b b l l s s";
+    "b b . . s s";
     border: 2px solid black;
     border-radius: 5px;
-    background-color: #939196;
     align-content: center
 }
 
@@ -47,19 +56,16 @@ body{
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 15px;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .description{
     grid-area: d;
     font-size: 15px;
     text-align: justify;
-    
+    place-self: center;
     font-family: 'Domine', serif;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin: 5%
 }
 
 .image{
@@ -69,15 +75,14 @@ body{
     /* width: 80%; */
     /* margin-top: 35px; */
     max-width: 80%;
-    max-height: 70%
-    
-    
+    max-height: 70%;
+
 }
 
 .source{
     grid-area: s;
     text-align: justify;
-    font-size: 12px;
+    font-size: 13px;
     font-family: 'Domine', serif;
     margin-left: 15px;
     margin-right: 15px;
@@ -85,16 +90,14 @@ body{
     direction: rtl
 }
 
-.save{
+.bookmark{
     grid-area: b;
+    margin-top:20%;
+    /* margin-bottom: 20%; */
     background-color: transparent;
-    color: red;
-    border-radius: 0px
+    width: 100%;
+    color: black;
 }
 
-.url{
-    grid-area: l;
-    font-size: 12px;
-    font-family: 'Domine', serif;
-}
+
 
