@@ -10,9 +10,11 @@ const loadPage = async function () {
 
 const displaySearch = async function () {
     let input = $(".searchInput").val()
-    console.log(input)
-    let output = await temp.getDataFromResults(input)
-    rend.renderSearch(output)
+    if (input) {
+        console.log(input)
+        let output = await temp.getDataFromResults(input)
+        rend.renderSearch(output)
+    }
 }
 loadPage()
 
