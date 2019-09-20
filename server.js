@@ -19,5 +19,5 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/NewsApp', { use
 app.use('/', api)
 
 
-const port = 4320
-app.listen(process.env.PORT || port, () => console.log(`Running on port ${port}`))
+const PORT = 4320
+app.listen(process.env.PORT || PORT, () => console.log(`Running on port ${port}`))
