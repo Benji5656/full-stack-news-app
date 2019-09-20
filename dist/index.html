@@ -49,7 +49,7 @@
     <h2 class="saveNews">SAVED FOR LATER</h2>
     
     <div id="displayBookmarked"></div>
-
+    <hr style="color: black">
     <div id="displayPreferences"></div>
 
     <h2 class="header">TOP TRENDING NEWS</h2>
@@ -88,7 +88,7 @@
         {{#each userSaved}}
             <div class="savedForLater">
                 <p class="title"><a href={{url}}>{{title}}</a></p>
-                <p class="source">{{source}} <button class="deleteDB">Clear</button></p>  
+                <button class="deleteDB">Clear</button>
                 <!-- <button class="deleteDB"><i class="fas fa-backspace"></i></button> -->
             </div>
             {{/each}}

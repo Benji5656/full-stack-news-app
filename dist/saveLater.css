@@ -1,26 +1,50 @@
+@keyframes appearsave{
+    from{
+        margin-left: 500%
+    }
+    to{
+        margin-right: 0%
+    }
+}
+
 #displayBookmarked{
-    display: flex;
-    flex-direction: row;
-    border-left: solid;
-    border-top: solid;
-    border-bottom: solid;
-    justify-content:space-between   
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    max-width:100%;
+    grid-gap: 10px;
+    margin: 5%;
+    animation-name: appearsave;
+    animation-duration: 3s
 }
 
 .savedForLater{
-    flex-grow: 1;
-    border-right: solid;
+    border: 3px solid rgba(8, 8, 8, 0.89);
+    /* width: 25vh; */
+    display: grid;
     border-radius: 0.5px;
-    flex-grow: 1;
-    flex-shrink: 1
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "t"
+    "b";
 }
 
 .savedForLater > .title{
-    font-size: 15px;
+    font-size: 13px;
     font-family: 'Noto Serif', serif;
-    flex-shrink:1
+    grid-area: t;
+    border: 1px, solid, black;
+    margin: 1%;
+    align-content: center;
 }
 
 .deleteDB{
+    grid-area: b;
+    /* margin: 5%; */
+    margin-left: 20%;
+    margin-top: 5%;
+    max-width: 60%;
+    max-height: 50%;
+    border-radius: 10px;
     align-content: center
+    
 }
