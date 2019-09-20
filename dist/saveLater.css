@@ -14,13 +14,13 @@
     border-right: solid;
     border-radius: 0.5px;
     flex-grow: 1;
-    flex-shrink: 1
+    flex-shrink: 1;
 }
 
 .savedForLater > .title{
     font-size: 15px;
     font-family: 'Noto Serif', serif;
-    flex-shrink:1 
+    flex-shrink:1
 }
 
 .deleteDB{
