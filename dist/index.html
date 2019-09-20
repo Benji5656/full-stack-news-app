@@ -22,7 +22,7 @@
             <h1>Find what you want to read,</h1>
             <h3>Save your stories for later.</h3><br><br>
             <form action="">
-                    <input class="searchInput" type="search">
+                    <input required class="searchInput" type="search" >
                     <i class="fa fa-search" onclick="displaySearch()"></i>
             </form>   
         </div>
@@ -31,6 +31,8 @@
     <div>
         <nav>
             <ul id="navItems">
+                <li>World</li>
+                <li>US Politics</li>
                 <li>Business</li>
                 <li>Entertainment</li>
                 <li>Finance</li>
@@ -95,6 +97,9 @@
 
     </script>
 
+    <div class="footer">
+        <p>This site is powered by <a href="https://newsapi.org/">NewsApi</a></p>
+    </div>
 
         <script src="/handlebars/dist/handlebars.js"></script>
         <script src="/jquery/dist/jquery.js"></script>
