@@ -5,10 +5,12 @@
     border-left: solid;
     border-top: solid;
     border-bottom: solid;
-    /* flex-wrap: wrap */
+    justify-content:space-between;
+    
 }
 
 .savedForLater{
+    flex-grow: 1;
     border-right: solid;
     border-radius: 0.5px;
     flex-grow: 1;
@@ -18,6 +20,7 @@
 .savedForLater > .title{
     font-size: 15px;
     font-family: 'Noto Serif', serif;
+    flex-shrink:1 
 }
 
 .deleteDB{
