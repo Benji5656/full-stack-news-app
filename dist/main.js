@@ -45,3 +45,4 @@ $("body").on("click", ".deleteDB", function () {   // deleteDB
         loadPage()
     })
 })
+
