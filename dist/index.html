@@ -60,7 +60,7 @@
             <h3 class="title">{{title}}</h3>
             <img class="image"src={{urlImage}}>
             <p class="description">{{description}}<a class="url" href={{url}} target="_blank"> Read More</a> </p>
-            <p class="source">{{source}}</p>
+            <!-- <p class="source">{{source}}</p> -->
             <button class="bookmark"><i class="far fa-bookmark"></i></button>      
         </div>
     {{/each}}
@@ -68,10 +68,11 @@
 
     <script id="preferences" type="text/x-handlebars-template">
         {{#each userSearch}}
-            <div class="mySearches">
+            <div class="mySearches" >
                 <h3 class="title">{{title}}</h3>
                 <img src={{urlImage}}>
-                <p class="description">{{description}} <a class="url" href={{url}}></a></p>
+                <p class="description">{{description}}<a class="url" href={{url}} target="_blank"> Read More</a> </p>
+                <!-- <a class="url" href={{url}} target="_blank">Read More</a> -->
                 <button class="bookmark"><i class="fas fa-bookmark"></i></button>        
             </div>
             {{/each}}
