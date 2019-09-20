@@ -18,7 +18,7 @@ router.get('/news', function (req, res) {
     d = moment().toISOString();
     d = moment().format('YYYY-MM-DD')
 
-    request(`https://newsapi.org/v2/top-headlines?country=us&pageSize=6&apiKey=${apiKey}`, function (error, response, body) {
+    request(`https://newsapi.org/v2/top-headlines?country=us&pageSize=20&apiKey=${apiKey}`, function (error, response, body) {
         searchNews = JSON.parse(body)
         // console.log(searchNews)
         articleArray = []
@@ -31,7 +31,8 @@ router.get('/news', function (req, res) {
                 description: a.description,
                 url: a.url,
                 urlImage: a.urlToImage,
-                publishedAt: a.publishedAt
+                publishedAt: a.publishedAt,
+                content: a.content
             })
             articleArray.push(newsArticles)
             //console.log(articleArray)
@@ -45,7 +46,7 @@ router.get('/news/:query', function (req, res) {
     // console.log(search)
     let searchArray = []                            //may want to use globally later
 
-    request(`https://newsapi.org/v2/everything?q=${search}&pageSize=6&apiKey=${apiKey}`, function (error, response, body) {
+    request(`https://newsapi.org/v2/everything?q=${search}&pageSize=12&apiKey=${apiKey}`, function (error, response, body) {
         userSearches = JSON.parse(body)
         newsArticle = userSearches.articles.forEach(a => {
             searchedArticles = new News({
@@ -55,7 +56,8 @@ router.get('/news/:query', function (req, res) {
                 description: a.description,
                 url: a.url,
                 urlImage: a.urlToImage,
-                publishedAt: a.publishedAt
+                publishedAt: a.publishedAt,
+                content: a.content
             })
             searchArray.push(searchedArticles)
             // console.log(searchArray)
