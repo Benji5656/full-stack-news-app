@@ -36,7 +36,6 @@ class TempManager {
     }
 
     deleteArticle(titleDel) {
-        titleDel={titleDel: titleDel}
         console.log(titleDel)
         $.ajax({
             url: ("/news/"+titleDel),

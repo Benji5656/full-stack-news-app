@@ -88,10 +88,9 @@ router.post('/news', function (req, res) {
 
 
 router.delete('/news/:newstitle', function (req, res) {
-    console.log(req.params)
-    let newsHead = JSON.stringify(req.params.newstitle)
-    console.log(newsHead)
-    News.findOne({ title: newsHead }, function (err, reply) {
+    newstitle = req.params.newstitle
+    console.log(newstitle)
+    News.findOne({ _id: newstitle }, function (err, reply) {
         reply.remove()
         News.find({}, function (err, response) {
             res.send(response)
