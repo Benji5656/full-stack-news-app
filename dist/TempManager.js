@@ -19,7 +19,7 @@ class TempManager {
     async getDataFromResults(query) {
         const userRequest = await $.get(`/news/${query}`)
         this.userSearch.push(userRequest)
-        // console.log(userRequest)
+        console.log(userRequest)
         return (userRequest)
     }
 
@@ -36,9 +36,9 @@ class TempManager {
     }
 
     deleteArticle(titleDel) {
-
+        console.log(titleDel)
         $.ajax({
-            url: '/news/'+titleDel,
+            url: ("/news/"+titleDel),
             method: "DELETE",
             success: function () {
                 console.log("Succesful delete article")

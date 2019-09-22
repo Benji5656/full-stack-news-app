@@ -42,7 +42,8 @@ $("body").on("click", ".bookmark", async function () {
 $("body").on("click", ".deleteDB", function () {   // deleteDB
     // let articleUrl = document.querySelector('#displayBookmarked div:nth-child(2) a').href
     let savedTitle = $(this).closest('div').find('.title').text()
-    temp.deleteArticle(savedTitle)
+    let articleID = $(this).closest('div').find('p').attr('data-id')
+    temp.deleteArticle(articleID)
     return temp.getDataFromDB().then((data) => {
         loadPage()
     })
